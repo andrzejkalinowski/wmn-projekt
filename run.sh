@@ -9,17 +9,17 @@
 echo
 echo "__C Compiler output:__"
 echo
-gcc main.c -o ./build/solver
+gcc ./src/*.c -Wall -o ./build/solver -lm
 
 echo
 echo "__C Solver output:__"
 echo
 ./build/solver
 
-# Compile LaTeX report
-echo
-echo "__Compiling LaTeX report:__"
-echo
-latex -output-format pdf -output-directory ./build raport.tex
-cp ./build/raport.pdf ./projekt_raport.pdf
+# # Compile LaTeX report
+# echo
+# echo "__Compiling LaTeX report:__"
+# echo
+# latex -output-format pdf -output-directory ./build raport.tex
+# cp ./build/raport.pdf ./projekt_raport.pdf
 
