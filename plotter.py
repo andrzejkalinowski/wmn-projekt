@@ -49,6 +49,8 @@ if __name__ == "__main__":
     ax.grid(True, linestyle='--', linewidth=0.5, alpha=0.6)
     ax.set_axisbelow(True)
     ax.margins(x=0.03, y=0.08)
+
+    #  warunkowe wlacznie rownych osi
     if equal_axes:
         ax.set_aspect('equal', adjustable='datalim')
     fig.tight_layout()
