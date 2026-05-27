@@ -21,7 +21,7 @@
 #define dt 0.001     // krok czasowy
 #define T 10        // maksymalny czas 'symulacji'
 #define S (PI * R * R) // Pole przekroju poprzecznego kulki [m^2]
-#define k 0.5*rho*S*c
+#define k (0.5*rho*S*c)
 
 // pozioma predkosc wiatru od poloznia y
 double w(double y){
@@ -62,14 +62,9 @@ int main() {
 
     // iterujemy sobie po czasie
     for(double t = 0;  t <= T; t += dt) {
-        if(z1[2] < 0){
-            printf("Kulka dotarla do ziemi w czasie t = %f s \n", t);
-            break; // kulka dotarla do ziemi   
-        }
-
         // Rozwiazanie
         vrk4(t, z0, dt, 4, vrhs, z1);
-
+        
         // Zapisamy wyniki do plikow
         fprintf(f_yx, "%f, %f \n", z1[0], z1[2]);
         fprintf(f_xt, "%f, %f \n", t, z1[0]);
@@ -81,6 +76,11 @@ int main() {
         z0[1] = z1[1];
         z0[2] = z1[2];
         z0[3] = z1[3];
+        
+        if(z1[2] < 0){
+            printf("Kulka dotarla do ziemi w czasie t = %f s \n", t);
+            break; // kulka dotarla do ziemi   
+        }
     }
     
     // Zamknięcie plikow
@@ -90,13 +90,6 @@ int main() {
     fclose(f_vxt);
     fclose(f_vyt);
     fclose(f_energy);
-    // Wywołanie skryptu do rysowania wykresów
-    system("python3 ./plotter.py data/data_yx.csv 'x' 'y(x)' 'Trajektoria kulki' equal");
-    system("python3 ./plotter.py data/data_xt.csv 't' 'x(t)' 'Położenie kulki w osi x'");
-    system("python3 ./plotter.py data/data_yt.csv 't' 'y(t)' 'Położenie kulki w osi y'");
-    system("python3 ./plotter.py data/data_vxt.csv 't' 'vx(t)' 'Prędkość kulki w osi x'");
-    system("python3 ./plotter.py data/data_vyt.csv 't' 'vy(t)' 'Prędkość kulki w osi y'");\
-    system("python3 ./plotter.py data/data_energy.csv 't' 'E(t)' 'Energia mechaniczna kulki'");
 
     return 0;
 }

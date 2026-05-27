@@ -19,6 +19,15 @@ echo "__C Solver output:__"
 echo
 ./build/solver
 
+# Wywołanie skryptu do rysowania wykresów
+python3 ./plotter.py data/data_yx.csv 'x' 'y(x)' 'Trajektoria kulki' equal
+python3 ./plotter.py data/data_xt.csv 't' 'x(t)' 'Położenie kulki w osi x'
+python3 ./plotter.py data/data_yt.csv 't' 'y(t)' 'Położenie kulki w osi y'
+python3 ./plotter.py data/data_vxt.csv 't' 'vx(t)' 'Prędkość kulki w osi x'
+python3 ./plotter.py data/data_vyt.csv 't' 'vy(t)' 'Prędkość kulki w osi y'
+python3 ./plotter.py data/data_energy.csv 't' 'E(t)' 'Energia mechaniczna kulki'
+
+
 # Compile LaTeX report
 echo
 echo "__Compiling LaTeX report:__"

@@ -25,6 +25,7 @@
 % \end{abstract}
 
 \section{Wprowadzenie}
+
 Zadanie polega na obliczniach numerycznych ruchu kulki spadającej z uwzględnieniem oporu powietrza
  oraz zadanego wydatku podmuchu powietrza.
 \begin{figure}[H]
@@ -69,7 +70,7 @@ Równania ruchu zostały wyprowadzone przy użyciu drugiej zasady dynamiki $\vec
 \end{equation}
 Pomoczniczo wprowadzamy $k = \frac{1}{2}\rho S C$. Otrzymujemy wektor siły oporu powietrza:
 \begin{equation}
-    \vec{F_0}(t) = \frac{1}{2} k \vec{v_p} |\vec{v_p}|
+    \vec{F_0}(t) = k \vec{v_p} |\vec{v_p}|
 \end{equation}
 \begin{equation}
     \vec{F_0}(t) = 
@@ -166,7 +167,7 @@ Do wykonania obliczeń użyto następujących parametrów:
         Maksymalna prędkość wiatru & $w_{max}$ & \SI{25}{m/s} \\
         Wysokosc poczatkowa & $y_0$ & \SI{10}{m} \\
         Położenie początkowe w osi x & $x_0$ & \SI{10}{m} \\    
-        Prędkość początkowa w osi x & $vx_0$ & \SI{10}{m/s} \\
+        Prędkość początkowa w osi x & $vx_0$ & \SI{0}{m/s} \\
         Prędkość początkowa w osi y & $vy_0$ & \SI{0}{m/s} \\
         Przyspieszenie ziemskie & $g$ & \SI{9.81}{m/s^2} \\
         Gęstość powietrza & $\rho$ & \SI{1.225}{kg/m^3} \\
@@ -222,6 +223,12 @@ Przy zadanych parametrach kulka spadnie na ziemię po około \underline{\SI{1.17
 \end{figure}
 
 \section{Wnioski}
-% Podsumowanie i wnioski z symulacji.
+
+Projekt polegasł na rozwiązaniu układu mechanicznego reprezenotowanego przez zestaaw rówanń różniczkowych.
+Równania zostały wyprowadzone przy użyciu drugiej zasady dynamiki oraz wzoru na siłę oporu powietrza
+oraz rozwiązane numerycznie przy użyciu metody Rungego-Kutty 4 rzędu.
+Uzyskane wyniki są zgodne z oczekiwaniami - kula spada.
+
+Ciekawą obserwacją jest fakt że podmuch wiatru, mimo że działa wyłącznie poziomo to wpływa równiwez na ruch w osi pionowej.
 
 \end{document}
