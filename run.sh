@@ -6,7 +6,7 @@
 ### Compiles the LaTeX report
 
 # Build folder
-mkdir ./build
+# mkdir ./build
 
 # Compile and run the C numerical solver
 echo
@@ -27,4 +27,4 @@ latex -output-format pdf -output-directory ./build raport.tex
 cp ./build/raport.pdf ./projekt_raport.pdf
 
 # Delete build files
-rm -rf ./build
+rm -rf ./build/*

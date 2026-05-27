@@ -163,15 +163,15 @@ Do wykonania obliczeń użyto następujących parametrów:
         \midrule
         Masa      & $m$ & \SI{0.1}{kg}    \\
         Promień kulki & $R$ & \SI{0.1}{m}     \\
-        Krok      & $dt$ & \SI{0.001}{s}    \\
-        Maksymalna prędkość wiatru & $w_{max}$ & \SI{10}{m/s} \\
-        Gęstość powietrza & $\rho$ & \SI{1.225}{kg/m^3} \\
-        Współczynnik oporu & $C$ & 0.3 \\
+        Maksymalna prędkość wiatru & $w_{max}$ & \SI{25}{m/s} \\
         Wysokosc poczatkowa & $y_0$ & \SI{10}{m} \\
         Położenie początkowe w osi x & $x_0$ & \SI{10}{m} \\    
-        Prędkość początkowa w osi x & $vx_0$ & \SI{0}{m/s} \\
+        Prędkość początkowa w osi x & $vx_0$ & \SI{10}{m/s} \\
         Prędkość początkowa w osi y & $vy_0$ & \SI{0}{m/s} \\
         Przyspieszenie ziemskie & $g$ & \SI{9.81}{m/s^2} \\
+        Gęstość powietrza & $\rho$ & \SI{1.225}{kg/m^3} \\
+        Współczynnik oporu & $C$ & 0.3 \\
+        Krok całkowania     & $dt$ & \SI{0.001}{s}    \\
         \bottomrule
     \end{tabular}
     \caption{Parametry użyte w symulacji.}
@@ -179,7 +179,8 @@ Do wykonania obliczeń użyto następujących parametrów:
 \end{table}
 
 \section{Wyniki}
-Wynki obliczeń zostały przeadstawione na wykresach, które zostały wygenerowane przy użyciu skryptu w Pythonie
+Wynki obliczeń zostały przeadstawione na wykresach, które zostały wygenerowane przy użyciu skryptu w Pythonie.
+Przy zadanych parametrach kulka spadnie na ziemię po około \underline{\SI{1.176}{s}.}
 
 \begin{figure}[H]
     \centering
@@ -200,6 +201,24 @@ Wynki obliczeń zostały przeadstawione na wykresach, które zostały wygenerowa
     \includegraphics[width=1\linewidth]{plots/Położenie kulki w osi y.pdf}
     \caption{Położenie kulki w osi y.}
     \label{fig:położenie_y}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/Prędkość kulki w osi x.pdf}
+    \caption{Prędkość kulki w osi x.}
+    \label{fig:predkosc_x}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/Prędkość kulki w osi y.pdf}
+    \caption{Prędkość kulki w osi y.}
+    \label{fig:predkosc_y}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/Energia mechaniczna kulki.pdf}
+    \caption{Całkowita energia mechaniczna kulki.}
+    \label{fig:energia}
 \end{figure}
 
 \section{Wnioski}
