@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p build
           mkdir -p data
-          mkdir -p plot
+          mkdir -p plots
 
       # 2. Zainstaluj Pythona
       - name: Set up Python
