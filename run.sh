@@ -6,7 +6,7 @@
 ### Compiles the LaTeX report
 
 # Build folder
-# mkdir ./build
+mkdir ./build
 
 # Compile and run the C numerical solver
 echo
