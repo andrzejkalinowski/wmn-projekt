@@ -32,7 +32,8 @@ python3 ./plotter.py data/data_energy.csv 't' 'E(t)' 'Energia mechaniczna kulki'
 echo
 echo "__Compiling LaTeX report:__"
 echo
-latex -output-format pdf -output-directory ./build raport.tex
+# latex -output-format pdf -output-directory ./build raport.tex
+pdflatex -interaction=nonstopmode -output-directory ./build raport.tex
 cp ./build/raport.pdf ./projekt_raport.pdf
 
 # Delete build files

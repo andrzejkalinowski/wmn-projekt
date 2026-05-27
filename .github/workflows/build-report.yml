@@ -16,6 +16,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+    - name: Create build directories
+        run: |
+          mkdir -p build
+          mkdir -p data
+          mkdir -p plot
+
       # 2. Zainstaluj Pythona
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,8 +37,13 @@ jobs:
       # 4. Zainstaluj LaTeX (texlive)
       - name: Install LaTeX
         run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-lang-polish
+            sudo apt-get update
+            sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-polish \
+            texlive-science
 
       # 5. Stwórz brakujące foldery
       - name: Create build directories
